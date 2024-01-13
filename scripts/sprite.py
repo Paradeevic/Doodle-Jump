@@ -6,3 +6,6 @@ class Sprite:
 
     def render(self, surface):
         surface.blit(self.image, self.rect)
+
+    def collide_sprite(self, other):
+        return self.rect.colliderect(other.rect)
