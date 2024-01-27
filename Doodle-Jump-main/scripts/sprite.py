@@ -4,7 +4,8 @@ class Sprite:
         self.rect = self.image.get_frect()
         self.rect.center = center
 
-    def render(self, surface):
+    def render(self, surface, offset_y):
+        rect = self.rect.move(0, - offset_y)
         surface.blit(self.image, self.rect)
         
 
