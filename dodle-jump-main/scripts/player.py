@@ -33,5 +33,13 @@ class Player(Sprite):
             self.rect.right =  0
     def collide_sprite(self, other):
         return super().collide_sprite(other) and self.velocity_y>0
+    
+    def reset(self, center, image, speed, jump_power, gravity):
+        super().__init__(center, self.original_image)
+        self.original_image = image.copy()
+        self.velocity_y = 0
+        self.is_walking_right = False
+        self.is_walking_left = False
+        self.on_platform = False
 
         

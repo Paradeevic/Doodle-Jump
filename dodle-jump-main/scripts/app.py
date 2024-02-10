@@ -1,8 +1,8 @@
-from scripts.constants import CreatePlatform_Event
 import pygame, os
 from scripts.game import Game
 from scripts.constants import display_size
 from scripts.functions import load_image
+from scripts.constants import create_PlatformEvent
 class App:
     def __init__(self) -> None:
         
@@ -20,12 +20,13 @@ class App:
                 self.running = False 
             elif event.type == pygame.KEYDOWN :
                 self.game.handle_key_down_event(event.key)
-            
+
+
             elif event.type == pygame.KEYUP   :
                 self.game.handle_key_up_event(event.key)
-            elif event.type == CreatePlatform_Event:
+            elif event.type ==  create_PlatformEvent:
                 self.game.handle_create_platform_event(event.platform)
-
+            
     
     def update(self):
         pass
@@ -43,7 +44,3 @@ class App:
             self.clock.tick(self.maxFPS)
     def update(self):
         self.game.update()
-
-
-    def handle_create_platform_event(self, platform):
-        self.platforms.append(platform)
