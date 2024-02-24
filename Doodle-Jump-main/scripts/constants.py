@@ -1,1 +1,5 @@
-display_size = (400, 720)
+import pygame
+
+
+display_size = (480, 720)
+CreatePlatformEvent = pygame.USEREVENT + 1
